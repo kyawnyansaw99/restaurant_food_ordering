@@ -1,0 +1,52 @@
+@import 'tailwindcss';
+
+/*
+ * Saffron & Spoon design tokens
+ * brand – warm chili/saffron orange (primary actions)
+ * char  – charcoal neutrals (text, dark surfaces)
+ * cream – warm off-white backgrounds
+ */
+@theme {
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+
+  --color-brand-50: #fff6ed;
+  --color-brand-100: #ffead4;
+  --color-brand-200: #ffd0a8;
+  --color-brand-300: #ffae70;
+  --color-brand-400: #fe8138;
+  --color-brand-500: #f15a14;
+  --color-brand-600: #d9420a;
+  --color-brand-700: #b4300b;
+  --color-brand-800: #8f2811;
+  --color-brand-900: #742311;
+
+  --color-cream: #fbf7f1;
+  --color-char-900: #1d1b19;
+  --color-char-700: #3f3a35;
+  --color-char-500: #77706a;
+  --color-char-300: #c9c2ba;
+  --color-char-100: #eee8e1;
+}
+
+body {
+  @apply bg-cream text-char-900 font-sans antialiased;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+@keyframes slide-in {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+@keyframes pop {
+  from { transform: scale(0.96); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.animate-slide-in { animation: slide-in 0.25s ease-out; }
+.animate-pop { animation: pop 0.18s ease-out; }
